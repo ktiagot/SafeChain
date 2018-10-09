@@ -17,7 +17,6 @@ export class LoginPage {
   }
   public username;
   public password;
-
   sendPostRequest() {
     console.log(this.username);
     console.log(this.password);
@@ -31,7 +30,7 @@ export class LoginPage {
       "password": "@eventcoin2018"
     }
     try{
-    this.httpClient.post("http://api-evt.hhornos.com/api-token-auth/", postData, httpOptions)
+    this.httpClient.post("/api-token-auth/", postData, httpOptions)
     .subscribe(data => {
       console.log(data['_body']);
     }, error => {
