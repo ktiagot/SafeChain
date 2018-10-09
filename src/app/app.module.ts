@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ComprarPage} from '../pages/comprar/comprar'
@@ -16,21 +17,20 @@ import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
-
-
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     HomePage,
     ComprarPage,
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
     OpEsTabDefaultPagePage,
-    LoginPage,
     CadastroPage,
     CadastroParticipantePage,
     CadastroOrganizadorPage,
@@ -39,8 +39,7 @@ import 'rxjs/add/operator/toPromise';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
-    LoginPage
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

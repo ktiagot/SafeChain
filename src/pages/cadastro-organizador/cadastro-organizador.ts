@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { CadastroPage } from '../cadastro/cadastro';
@@ -12,11 +12,18 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
 export class CadastroOrganizadorPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  cadastraOrganizador(){
-    
+
+  cadastraOrganizador(form)
+  {
+    console.log(form);
   }
+
+/*  cadastraOrganizador(){
+    this.nome = this.navParams.get("nomeFantasia");
+    console.log(this.nome);
+  }*/
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);

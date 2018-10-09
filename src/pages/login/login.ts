@@ -17,7 +17,7 @@ import 'rxjs/add/operator/catch';
 export class LoginPage {
   apiRoot: string = "http://api-evt.hhornos.com";
   constructor(public navCtrl: NavController, public httpClient: HttpClient) {}
-  sendPostRequest() {
+/*   sendPostRequest() {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type":  "application/json"
@@ -42,7 +42,7 @@ export class LoginPage {
     };
     
   }
-
+*/
   goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
