@@ -14,6 +14,9 @@ export class CadastroOrganizadorPage {
   // should be each tab's root Page
   constructor(public navCtrl: NavController) {
   }
+  cadastraOrganizador(){
+    
+  }
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);

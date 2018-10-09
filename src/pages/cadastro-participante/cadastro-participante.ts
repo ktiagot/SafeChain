@@ -14,6 +14,11 @@ export class CadastroParticipantePage {
   // should be each tab's root Page
   constructor(public navCtrl: NavController) {
   }
+
+  cadastraParticipante(){
+    
+  }
+
   goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);

@@ -40,6 +40,7 @@ export class LoginPage {
     catch(ex) {
       console.log = ex.Message();
     };
+    
   }
 
   goToCadastro(params){
