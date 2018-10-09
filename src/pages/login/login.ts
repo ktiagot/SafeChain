@@ -27,11 +27,11 @@ export class LoginPage {
       })
     }
     let postData = {
-      "username": "hhornos",
-      "password": "teste1010"
+      "username": "eventcoin",
+      "password": "@eventcoin2018"
     }
     try{
-    this.httpClient.post("http://smdev.smartpay.technology/v1/api-token-auth/", postData, httpOptions)
+    this.httpClient.post("http://api-evt.hhornos.com/v1/admin/", postData, httpOptions)
     .subscribe(data => {
       console.log(data['body']);
     }, error => {
