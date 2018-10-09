@@ -30,13 +30,17 @@ export class LoginPage {
       "username": "hhornos",
       "password": "teste1010"
     }
-
+    try{
     this.httpClient.post("http://smdev.smartpay.technology/v1/api-token-auth/", postData, httpOptions)
     .subscribe(data => {
       console.log(data['body']);
     }, error => {
     console.log(error);
     });
+  }
+  catch(ex) {
+    console.log = ex.Message();
+  };
   }
 
   goToCadastro(params){
