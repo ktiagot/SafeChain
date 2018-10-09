@@ -39,7 +39,8 @@ import 'rxjs/add/operator/toPromise';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    LoginPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [

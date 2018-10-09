@@ -1,25 +1,23 @@
-import { Component, ViewChild  } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController, public httpClient: HttpClient) {
-  }
-  public username;
-  public password;
+  apiRoot: string = "http://api-evt.hhornos.com";
+  constructor(public navCtrl: NavController, public httpClient: HttpClient) {}
   sendPostRequest() {
-    console.log(this.username);
-    console.log(this.password);
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type":  "application/json"
@@ -29,17 +27,19 @@ export class LoginPage {
       "username": "eventcoin",
       "password": "@eventcoin2018"
     }
-    try{
-    this.httpClient.post("/api-token-auth/", postData, httpOptions)
-    .subscribe(data => {
-      console.log(data['_body']);
-    }, error => {
-    console.log(error);
-    });
-  }
-  catch(ex) {
-    console.log = ex.Message();
-  };
+    try
+    {
+      this.httpClient.post(this.apiRoot+"/api-token-auth/", postData, httpOptions)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
+    }
+    
+    catch(ex) {
+      console.log = ex.Message();
+    };
   }
 
   goToCadastro(params){
