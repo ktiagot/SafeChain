@@ -31,9 +31,9 @@ export class LoginPage {
       "password": "@eventcoin2018"
     }
     try{
-    this.httpClient.post("http://api-evt.hhornos.com/v1/admin/", postData, httpOptions)
+    this.httpClient.post("http://api-evt.hhornos.com/api-token-auth/", postData, httpOptions)
     .subscribe(data => {
-      console.log(data['body']);
+      console.log(data['_body']);
     }, error => {
     console.log(error);
     });
