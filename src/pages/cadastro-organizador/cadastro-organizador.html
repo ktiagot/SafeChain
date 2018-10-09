@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Cadastro Organizador
+      Cadastro do Organizador
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page10">
-  <form #formOrganizador="ngForm" (ngSubmit)="onSubmit(formOrganizador)">
+  <form #f="ngForm" (ngSubmit)="cadastraOrganizador(f)">
     <div class="spacer" style="width:300px;height:20px;" id="cadastroOrganizador-spacer14"></div>
     <img src="assets/img/D3QbxaO7Sr23xyJtF9Bp_SafeChain2.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
     <div class="spacer" style="width:300px;height:20px;" id="cadastroOrganizador-spacer15"></div>
@@ -60,7 +60,7 @@
         <ion-input type="text" placeholder="" name="senha" ngModel></ion-input>
       </ion-item>
     </ion-list>
-    <button id="cadastroOrganizador-button9" ion-button color="positive" block on-click="cadastraOrganizador()">
+    <button id="cadastroOrganizador-button9" ion-button color="positive" block>
       Cadastrar
     </button>
     <button id="cadastroOrganizador-button10" ion-button color="calm" block on-click="goToLogin()">
