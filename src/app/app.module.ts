@@ -17,6 +17,7 @@ import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersProvider } from '../providers/users/users';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
@@ -60,7 +61,7 @@ import 'rxjs/add/operator/toPromise';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    
+    UsersProvider
   ]
 })
 export class AppModule {}

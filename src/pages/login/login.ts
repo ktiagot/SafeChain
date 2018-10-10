@@ -1,48 +1,39 @@
+import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
-
+@IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
 })
 export class LoginPage {
-  apiRoot: string = "http://api-evt.hhornos.com";
-  constructor(public navCtrl: NavController, public httpClient: HttpClient) {}
-  sendPostRequest() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type":  "application/json"
-      })
-    }
-    let postData = {
-      "username": "eventcoin",
-      "password": "@eventcoin2018"
-    }
-    try
-    {
-      this.httpClient.post(this.apiRoot+"/api-token-auth/", postData, httpOptions)
-      .subscribe(data => {
-        console.log(data);
-      }, error => {
-        console.log(error);
-      });
-    }
-    
-    catch(ex) {
-      console.log = ex.Message();
-    };
-    
+  model: User;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
+    this.model = new User();
+    this.model.email = 'hhornos';
+    this.model.password = 'teste1010';
   }
 
+  login() {
+    this.userProvider.login(this.model.email, this.model.password)
+      .then((result: any) => {
+        this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + result.token, position: 'botton', duration: 3000 }).present();
+
+        //Salvar o token no Ionic Storage para usar em futuras requisições.
+        //Redirecionar o usuario para outra tela usando o navCtrl
+        //this.navCtrl.pop();
+        //this.navCtrl.setRoot()
+      })
+      .catch((error: any) => {
+        this.toast.create({ message: 'Erro ao efetuar login. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+      });
+  }
   goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
@@ -59,4 +50,9 @@ export class LoginPage {
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
   }
+}
+
+export class User {
+  email: string;
+  password: string;
 }
