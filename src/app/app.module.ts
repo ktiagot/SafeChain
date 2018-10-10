@@ -19,7 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users/users';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
@@ -38,13 +38,12 @@ import 'rxjs/add/operator/toPromise';
     CadastroParticipantePage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
-    HomeOrganizadorPage,
-    FormsModule
+    HomeOrganizadorPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
+    HttpClientModule    ,
     FormsModule
   ],
   bootstrap: [IonicApp],
@@ -61,8 +60,7 @@ import 'rxjs/add/operator/toPromise';
     CadastroParticipantePage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
-    HomeOrganizadorPage,
-    FormsModule
+    HomeOrganizadorPage
   ],
   providers: [
     StatusBar,

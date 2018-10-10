@@ -5,6 +5,7 @@ import { CadastroPage } from '../cadastro/cadastro';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
+import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 
 
 @IonicPage()
@@ -35,8 +36,8 @@ export class LoginPage {
       .catch((error: any) => {
         this.toast.create({ message: 'Erro ao efetuar login. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
       });
-      this.toast.create({ message: 'Usuário logado com sucesso.', position: 'botton', duration: 3000 }).present();
-      this.navCtrl.push(HomePage);  
+      this.toast.create({ message: 'Usuário logado com sucesso.', position: 'top', duration: 3000 }).present();
+      this.navCtrl.setRoot(TabsControllerPage);  
     }
     catch(ex)
     {

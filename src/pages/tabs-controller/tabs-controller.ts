@@ -5,8 +5,7 @@ import { ComprarPage } from '../comprar/comprar';
 import { PrXimosEventosPage } from '../pr-ximos-eventos/pr-ximos-eventos';
 import { OpEsTabDefaultPagePage } from '../op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../login/login';
-
-@Component({
+ @Component({
   selector: 'page-tabs-controller',
   templateUrl: 'tabs-controller.html'
 })
