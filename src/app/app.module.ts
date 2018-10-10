@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HomeOrganizadorPage } from '../pages/home-organizador/home-organizador';
 import { ComprarPage} from '../pages/comprar/comprar'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
@@ -35,7 +36,8 @@ import 'rxjs/add/operator/toPromise';
     CadastroPage,
     CadastroParticipantePage,
     CadastroOrganizadorPage,
-    InformaEsDoEventoPage
+    InformaEsDoEventoPage,
+    HomeOrganizadorPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import 'rxjs/add/operator/toPromise';
     CadastroPage,
     CadastroParticipantePage,
     CadastroOrganizadorPage,
-    InformaEsDoEventoPage
+    InformaEsDoEventoPage,
+    HomeOrganizadorPage
   ],
   providers: [
     StatusBar,

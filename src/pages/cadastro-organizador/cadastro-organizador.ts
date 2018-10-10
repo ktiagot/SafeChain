@@ -1,8 +1,10 @@
+import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { CadastroPage } from '../cadastro/cadastro';
+import { HomeOrganizadorPage } from '../home-organizador/home-organizador';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 
 @Component({
@@ -10,9 +12,11 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
   templateUrl: 'cadastro-organizador.html'
 })
 export class CadastroOrganizadorPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  model: Organizador;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
+    this.model = new Organizador();
+    this.model.email = 'hhornos';
+    this.model.password = 'teste1010';
   }
 
   cadastraOrganizador(form)
@@ -39,5 +43,18 @@ export class CadastroOrganizadorPage {
   }goToCadastroOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
+  }goToHomeOrganizador(params){
+    if (!params) params = {};
+    this.navCtrl.push(HomeOrganizadorPage);
   }
+
+  
+}
+
+export class Organizador {
+  id: number;
+  password: string;
+  email: string;
+  name: string;
+  
 }
