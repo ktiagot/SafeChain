@@ -14,16 +14,18 @@ import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organi
 export class LoginPage {
   model: User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  private toast: ToastController, private userProvider: UsersProvider) {
     this.model = new User();
     this.model.email = 'hhornos';
     this.model.password = 'teste1010';
   }
 
   login() {
-    this.userProvider.login(this.model.email, this.model.password)
-      .then((result: any) => {
-        this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + result.token, position: 'botton', duration: 3000 }).present();
+    this.userProvider.createAccount(this.model.email, this.model.password)
+    .then((result: any) => {
+      this.toast.create({ message: 'Usuário logado com sucesso. Token: ' +
+      result.token, position: 'botton', duration: 3000 }).present();
 
         //Salvar o token no Ionic Storage para usar em futuras requisições.
         //Redirecionar o usuario para outra tela usando o navCtrl
