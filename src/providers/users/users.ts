@@ -8,26 +8,6 @@ export class UsersProvider {
 
   constructor(public http: HttpClient) { }
 
-  loginAccount(email: string, password: string) {
-    return new Promise((resolve, reject) => {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          "Content-Type":  "application/json"
-        })
-      }
-
-      var data = {
-        username: email,
-        password: password
-      };
-
-      this.http.post(this.API_URL + 'api-token-auth/', data, httpOptions)
-        .subscribe((result => console.log(result)),
-        (error) => {
-          reject(error);
-        });
-    });
-  }
 
   login(username: string, password: string) {
     return new Promise((resolve, reject) => {
@@ -35,7 +15,6 @@ export class UsersProvider {
         username: username,
         password: password
       };
-      console.log("HENRIQUE")
       this.http.post(this.API_URL + 'api-token-auth/', data)
       .subscribe((result => console.log(result)),
       (error) => {
