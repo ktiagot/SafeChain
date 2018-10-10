@@ -22,7 +22,7 @@ export class LoginPage {
   }
 
   login() {
-    this.userProvider.createAccount(this.model.email, this.model.password)
+    this.userProvider.loginAccount(this.model.email, this.model.password)
     .then((result: any) => {
       this.toast.create({ message: 'Usuário logado com sucesso. Token: ' +
       result.token, position: 'botton', duration: 3000 }).present();

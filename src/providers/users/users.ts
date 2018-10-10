@@ -8,7 +8,7 @@ export class UsersProvider {
 
   constructor(public http: HttpClient) { }
 
-  createAccount(email: string, password: string) {
+  loginAccount(email: string, password: string) {
     return new Promise((resolve, reject) => {
       const httpOptions = {
         headers: new HttpHeaders({
