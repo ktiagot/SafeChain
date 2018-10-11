@@ -1,3 +1,5 @@
+/* Arquivo onde ficam os métodos para acessar a API e realizar o CRUD */
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';

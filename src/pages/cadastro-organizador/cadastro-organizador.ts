@@ -14,20 +14,16 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
 export class CadastroOrganizadorPage {
   model: Organizador;
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
-    this.model = new Organizador();
-    this.model.email = 'hhornos';
-    this.model.password = 'teste1010';
+    
+    
   }
 
-  cadastraOrganizador(form)
+  cadastraOrganizador()
   {
-    console.log(form);
+    
   }
 
-/*  cadastraOrganizador(){
-    this.nome = this.navParams.get("nomeFantasia");
-    console.log(this.nome);
-  }*/
+
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
