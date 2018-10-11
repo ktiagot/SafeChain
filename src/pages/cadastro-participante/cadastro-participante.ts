@@ -10,8 +10,17 @@ import { HomePage } from '../home/home';
   templateUrl: 'cadastro-participante.html'
 })
 export class CadastroParticipantePage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
+  /* Com base no mesmo método criado na tela de Login.html, Login.ts 
+  e no método login do arquivo users.ts que está dentro da pasta src/providers, precisamos
+  criar a estrutura para pegar os dados do formulário quando o usuário clicar em
+  cadastrar, e passar para os métodos responsáveis e enviar para a API
+  
+  O problema é: nesta API, quando "criamos" o usuário, primeiramente ele deve cadastrar 
+  somente o email e a senha, depois o restante das informações, então pela lógica
+  teriam que ser dois métodos, ou de alguma outra maneira em um só, o que funcionar,
+  pois em um endpoint está login e senha e em outro estão o restante das informações 
+  (consultar documentação do drive para acessar os endpoits)*/
+
   constructor(public navCtrl: NavController) {
   }
 
