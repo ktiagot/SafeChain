@@ -1,3 +1,4 @@
+
 /* Arquivo onde ficam os métodos para acessar a API e realizar o CRUD */
 
 import { Injectable } from '@angular/core';
@@ -10,11 +11,7 @@ export class UsersProvider {
 
   constructor(public http: HttpClient) { }
 
-  /* Nesta página não estou conseguindo captar a mensagem de erro e barrar
-  o login quando as informações estão incorretas. Ele reconhece quando está
-  correto e retorna no console do navegador o token de sessão do usuário
-  que é único, mas quando coloco login/senha incorretos, ele dá uma
-  mensagem de erro e entra mesmo assim */
+ 
 
   login(username: string, password: string) {
     return new Promise((resolve, reject) => {
