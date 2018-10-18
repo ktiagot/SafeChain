@@ -5,7 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HomeOrganizadorPage } from '../pages/home-organizador/home-organizador';
-import { ComprarPage} from '../pages/comprar/comprar'
+import { ComprasPage} from '../pages/compras/compras'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
@@ -29,7 +29,7 @@ import 'rxjs/add/operator/toPromise';
     MyApp,
     LoginPage,
     HomePage,
-    ComprarPage,
+    ComprasPage,
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
@@ -50,7 +50,7 @@ import 'rxjs/add/operator/toPromise';
   entryComponents: [
     MyApp,
     HomePage,
-    ComprarPage,
+    ComprasPage,
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
