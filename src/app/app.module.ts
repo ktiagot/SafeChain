@@ -23,6 +23,7 @@ import { UsersProvider } from '../providers/users/users';
 import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
+import { ProviderLoginProvider } from '../providers/provider-login/provider-login';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import 'rxjs/add/operator/toPromise';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsersProvider
+    UsersProvider,
+    ProviderLoginProvider
   ]
 })
 export class AppModule {}
