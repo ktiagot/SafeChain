@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page10">
-  <form #f="ngForm" (ngSubmit)="cadastraOrganizador(f)">
+  <form>
     <div class="spacer" style="width:300px;height:20px;" id="cadastroOrganizador-spacer14"></div>
     <img src="assets/img/D3QbxaO7Sr23xyJtF9Bp_SafeChain2.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
     <div class="spacer" style="width:300px;height:20px;" id="cadastroOrganizador-spacer15"></div>
@@ -15,49 +15,49 @@
         <ion-label>
           Nome Fantasia
         </ion-label>
-        <ion-input type="text" placeholder="" name="nomeFantasia" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.nome_fantasia" type="text" placeholder="" name="nomeFantasia" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input13">
         <ion-label>
           Razão Social
         </ion-label>
-        <ion-input type="text" placeholder="" name="razaosocial" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.razao_social" type="text" placeholder="" name="razaosocial" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input9">
         <ion-label>
           CNPJ
         </ion-label>
-        <ion-input type="number" placeholder="" name="cnpj" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.id_documento" type="number" placeholder="" name="cnpj" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input14">
         <ion-label>
           Nome (Responsável)
         </ion-label>
-        <ion-input type="text" placeholder="" name="nome" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.nome_responsavel" type="text" placeholder="" name="nome" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input10">
         <ion-label>
           Telefone
         </ion-label>
-        <ion-input type="tel" placeholder="(__)____-_____" name="telefone" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.telefone" type="tel" placeholder="(__)____-_____" name="telefone" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input15">
         <ion-label>
           Endereço
         </ion-label>
-        <ion-input type="text" placeholder="" name="endereco" ngModel></ion-input>
+        <ion-input [(ngModel)]="organizador.endereco" type="text" placeholder="" name="endereco" ngModel></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input11">
         <ion-label>
           Email
         </ion-label>
-        <ion-input [(ngModel)]="user.mail" type="email" placeholder="" name="email"></ion-input>
+        <ion-input [(ngModel)]="user.email" type="email" placeholder="" name="email"></ion-input>
       </ion-item>
       <ion-item id="cadastroOrganizador-input12">
         <ion-label>
           Senha
         </ion-label>
-        <ion-input [(ngModel)]="user.password" type="text" placeholder="" name="senha"></ion-input>
+        <ion-input [(ngModel)]="user.password" type="password" placeholder="" name="senha"></ion-input>
       </ion-item>
     </ion-list>
     <button id="cadastroOrganizador-button9" ion-button color="positive" block on-click="cadastraOrganizador(user)">
