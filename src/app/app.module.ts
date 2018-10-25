@@ -2,6 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HomeOrganizadorPage } from '../pages/home-organizador/home-organizador';
@@ -46,8 +49,16 @@ import { ProviderLoginProvider } from '../providers/provider-login/provider-logi
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule    ,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD0nyyK3dLBXr2z3N78oCjKqTwxeTWHkME",
+      authDomain: "safechain-3b504.firebaseapp.com",
+      databaseURL: "https://safechain-3b504.firebaseio.com",
+      projectId: "safechain-3b504",
+      storageBucket: "safechain-3b504.appspot.com",
+      messagingSenderId: "1084383673723"
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
