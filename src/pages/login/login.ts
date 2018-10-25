@@ -1,11 +1,10 @@
-import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
-import { TabsControllerPage } from '../tabs-controller/tabs-controller';
+import { User } from '../../models/user';
 
 
 @IonicPage()
@@ -14,44 +13,17 @@ import { TabsControllerPage } from '../tabs-controller/tabs-controller';
   templateUrl: 'login.html',
 })
 
- /* Nesta página não estou conseguindo captar a mensagem de erro e barrar
-  o login quando as informações estão incorretas. Ele reconhece quando está
-  correto e retorna no console do navegador o token de sessão do usuário
-  que é único, mas quando coloco login/senha incorretos, ele dá uma
-  mensagem de erro e entra mesmo assim */
-
 export class LoginPage {
-  user: any = {
-  email: '',
-  password: ''
-  }
+  user = {} as User
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController) {
     
   }
+  login()
+  {
 
-  login() {
-    try{
-    this.userProvider.login(this.user.email, this.user.password)
-      .then((result: any) => {
-             
-        //Salvar o token no Ionic Storage para usar em futuras requisições.
-        //Redirecionar o usuario para outra tela usando o navCtrl
-        //this.navCtrl.pop();
-        //this.navCtrl.setRoot()
-      })
-      .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao efetuar login. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
-      });
-      this.toast.create({ message: 'Usuário logado com sucesso.', position: 'top', duration: 3000 }).present();
-      this.navCtrl.setRoot(TabsControllerPage);  
-    }
-    catch(ex)
-    {
-      console.log(ex.message);
-    }
-      
   }
+
   goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
@@ -68,9 +40,4 @@ export class LoginPage {
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
   }
-}
-
-export class User {
-  email: string;
-  password: string;
 }

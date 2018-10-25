@@ -16,21 +16,21 @@
       <ion-label>
         Email
       </ion-label>
-      <ion-input [(ngModel)]="user.email" type="email" placeholder="" name="email"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.email" name="username"></ion-input>
     </ion-item>
     <div class="spacer" style="width:300px;height:12px;" id="login-spacer5"></div>
     <ion-item id="login-input2">
       <ion-label>
         Senha
       </ion-label>
-      <ion-input [(ngModel)]="user.password" type="password" placeholder="" name="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
     </ion-item>
     <div class="spacer" style="height:40px;" id="login-spacer6"></div>
-    <button id="login-button1" ion-button color="positive" block>
+    <button id="login-button1" (click)="login()" ion-button color="positive" block>
       Entrar
     </button>
   </form>
-    <button id="login-button2" ion-button color="calm" block on-click="goToCadastro()">
+    <button id="login-button2" (click)="goToCadastro()" ion-button color="calm" block>
       Cadastre-se!
     </button>
   
