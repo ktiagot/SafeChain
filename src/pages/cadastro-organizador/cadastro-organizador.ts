@@ -5,7 +5,6 @@ import { LoginPage } from '../login/login';
 import { CadastroPage } from '../cadastro/cadastro';
 import { HomeOrganizadorPage } from '../home-organizador/home-organizador';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
-import { User } from '../../models/user';
 import { PerfilOrganizador } from '../../models/organizador';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -15,27 +14,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'cadastro-organizador.html'
 })
 export class CadastroOrganizadorPage {
-  afDatabase: AngularFireDatabase;
-  user = { } as User;
-  organizador = { } as PerfilOrganizador;
+  organizador = {} as Organizador;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, afDatabase: AngularFireDatabase) {
+
   }
 
-  async cadastraOrganizador(user: User, organizador: Organizador, afDatabase: AngularFireDatabase)
-  {
-    try
-    {
-      const emailPassSuccess = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      console.log(emailPassSuccess);
-        this.afAuth.authState.take(1).subscribe(auth => {
-        this.afDatabase.list(`organizador/${auth.uid}`).push(this.organizador).then(() => this.navCtrl.push(HomeOrganizadorPage)) 
-        })      
-    }
-    catch (e) 
-    {
-      console.log(e);
-    }
-  }
+  cadastraOrganizador(){}; //Finalizar https://www.youtube.com/watch?v=uESqBwFVf1Q 3:50
 
 
   goToHome(params){

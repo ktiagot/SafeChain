@@ -47,20 +47,8 @@
         </ion-label>
         <ion-input [(ngModel)]="organizador.endereco" type="text" placeholder="" name="endereco" ngModel></ion-input>
       </ion-item>
-      <ion-item id="cadastroOrganizador-input11">
-        <ion-label>
-          Email
-        </ion-label>
-        <ion-input [(ngModel)]="user.email" type="email" placeholder="" name="email"></ion-input>
-      </ion-item>
-      <ion-item id="cadastroOrganizador-input12">
-        <ion-label>
-          Senha
-        </ion-label>
-        <ion-input [(ngModel)]="user.password" type="password" placeholder="" name="senha"></ion-input>
-      </ion-item>
     </ion-list>
-    <button id="cadastroOrganizador-button9" ion-button color="positive" block on-click="cadastraOrganizador(user)">
+    <button id="cadastroOrganizador-button9" ion-button color="positive" block on-click="cadastraOrganizador()">
       Cadastrar
     </button>
     <button id="cadastroOrganizador-button10" ion-button color="calm" block on-click="goToLogin()">
