@@ -15,40 +15,28 @@
             <ion-label>
               Nome
             </ion-label>
-            <ion-input type="text" placeholder="" name="nome" ngModel></ion-input>
+            <ion-input [(ngModel)]="participante.nome" type="text" placeholder="" name="nome" ngModel></ion-input>
           </ion-item>
           <ion-item id="cadastroParticipante-input3">
             <ion-label>
               CPF
             </ion-label>
-            <ion-input type="number" name="cpf" ngModel></ion-input>
+            <ion-input [(ngModel)]="participante.cpf" type="number" name="cpf" ngModel></ion-input>
           </ion-item>
         <ion-item id="cadastroParticipante-input6">
           <ion-label>
             Telefone
           </ion-label>
-          <ion-input type="tel" name="telefone" mask="(99)9999-99999" ngModel></ion-input>
-        </ion-item>
-        <ion-item id="cadastroParticipante-input7">
-          <ion-label>
-            Email
-          </ion-label>
-          <ion-input type="email" placeholder="" name="email" ngModel></ion-input>
-        </ion-item>
-        <ion-item id="cadastroParticipante-input5">
-          <ion-label>
-            Senha
-          </ion-label>
-          <ion-input type="text" placeholder="" name="senha" ngModel></ion-input>
+          <ion-input [(ngModel)]="participante.telefone" type="tel" name="telefone" mask="(99)9999-99999" ngModel></ion-input>
         </ion-item>
         <ion-list radio-group>
           <ion-item>
             <ion-label>Cliente</ion-label>
-            <ion-radio checked="true" value="cliente"></ion-radio>
+            <ion-radio [(ngModel)]="participante.tipo" checked="true" value="cliente"></ion-radio>
           </ion-item>
           <ion-item>
             <ion-label>Lojista</ion-label>
-            <ion-radio value="lojista"></ion-radio>
+            <ion-radio [(ngModel)]="participante.tipo" value="lojista"></ion-radio>
           </ion-item>
         </ion-list>
       </ion-list>

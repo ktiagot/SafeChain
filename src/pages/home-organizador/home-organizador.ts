@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { PerfilOrganizador } from '../../models/organizador';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { PerfilOrganizador } from '../../models/organizador'
 
 @Component({
   selector: 'page-home-organizador',
@@ -10,15 +10,19 @@ import { PerfilOrganizador } from '../../models/organizador';
 })
 export class HomeOrganizadorPage {
 
-  constructor(public navCtrl: NavController, private afAuth: AngularFireAuth, private toast: ToastController) {
+  items;
+
+  constructor(public navCtrl: NavController, private afAuth: AngularFireAuth,
+    private afDb: AngularFireDatabase, private toast: ToastController) {
   }
-  
+
   ionViewDidLoad(){
+    //Validação do cadastro com mensagem de boas vindas
     this.afAuth.authState.take(1).subscribe(data => {
       if (data && data.email && data.uid)
       {
         this.toast.create({
-          message: `Bem vindo ao SafeChain!, ${data.email}`,
+          message: `Bem vindo ao SafeChain!`,
           duration: 3000
         }).present();
       }
@@ -30,6 +34,9 @@ export class HomeOrganizadorPage {
         }).present();
       }
     })
+    
+    
   }
+
   
 }
