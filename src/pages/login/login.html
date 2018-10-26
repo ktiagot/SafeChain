@@ -9,21 +9,21 @@
 </ion-header>
 <ion-content padding style="background:url(assets/img/Y0iz54oxR6mbkKDrdJDf_fundo.jpg) no-repeat center;background-size:cover;" id="page6">
   <div class="spacer" style="width:300px;height:70px;" id="login-spacer7"></div>
-  <form #f="ngForm" (ngSubmit)="login(f)">
+  <form>
     <img src="assets/img/KnyvqhtPRo2GFzWvP7tD_SafeChain1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
     <div class="spacer" style="width:300px;height:56px;" id="login-spacer4"></div>
     <ion-item id="login-input1">
       <ion-label>
         Email
       </ion-label>
-      <ion-input type="text" [(ngModel)]="user.email" name="username"></ion-input>
+      <ion-input [(ngModel)]="user.email" type="text" name="username"></ion-input>
     </ion-item>
     <div class="spacer" style="width:300px;height:12px;" id="login-spacer5"></div>
     <ion-item id="login-input2">
       <ion-label>
         Senha
       </ion-label>
-      <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+      <ion-input [(ngModel)]="user.password" type="password" name="password"></ion-input>
     </ion-item>
     <div class="spacer" style="height:40px;" id="login-spacer6"></div>
     <button id="login-button1" (click)="login(user)" ion-button color="positive" block>

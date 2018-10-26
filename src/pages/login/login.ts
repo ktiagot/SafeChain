@@ -28,10 +28,11 @@ export class LoginPage {
     {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       console.log(result);
+      this.navCtrl.push(HomePage);
     }
     catch(e)
     {
-      console.log(e);
+      this.toast.create(e);
     }
   }
   goToCadastroEmailSenha(params){
