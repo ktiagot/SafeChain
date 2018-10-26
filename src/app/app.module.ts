@@ -15,6 +15,7 @@ import { EventosPage } from '../pages/eventos/eventos';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { OpEsTabDefaultPagePage } from '../pages/op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../pages/login/login';
+import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroParticipantePage } from '../pages/cadastro-participante/cadastro-participante';
 import { CadastroOrganizadorPage } from '../pages/cadastro-organizador/cadastro-organizador';
@@ -43,7 +44,8 @@ import 'rxjs/add/operator/toPromise';
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
-    EstandePage
+    EstandePage,
+    CadastroEmailSenhaPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import 'rxjs/add/operator/toPromise';
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
-    EstandePage
+    EstandePage,
+    CadastroEmailSenhaPage
   ],
   providers: [
     StatusBar,

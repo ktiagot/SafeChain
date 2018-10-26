@@ -5,22 +5,28 @@ import { LoginPage } from '../login/login';
 import { CadastroPage } from '../cadastro/cadastro';
 import { HomeOrganizadorPage } from '../home-organizador/home-organizador';
 import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
-import { PerfilOrganizador } from '../../models/organizador';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { PerfilOrganizador } from '../../models/organizador';
 
 @Component({
   selector: 'page-cadastro-organizador',
   templateUrl: 'cadastro-organizador.html'
 })
 export class CadastroOrganizadorPage {
-  organizador = {} as Organizador;
+  organizador = {} as PerfilOrganizador;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, afDatabase: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
 
   }
 
-  cadastraOrganizador(){}; //Finalizar https://www.youtube.com/watch?v=uESqBwFVf1Q 3:50
+  cadastraOrganizador(){
+    this.afAuth.authState.take(1).subscribe(auth => {
+      this.afDatabase.object(`PerfilOrganizador/${auth.uid}`).set(this.organizador)
+      .then(() => {this.navCtrl.setRoot(HomeOrganizadorPage)});
+    })
+  };
 
 
   goToHome(params){
@@ -43,13 +49,5 @@ export class CadastroOrganizadorPage {
     this.navCtrl.push(HomeOrganizadorPage);
   }
 
-  
-}
-
-export class Organizador {
-  id: number;
-  password: string;
-  email: string;
-  name: string;
   
 }

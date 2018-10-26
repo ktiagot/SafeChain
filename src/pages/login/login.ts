@@ -5,6 +5,7 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
 import { User } from '../../models/user';
+import { CadastroEmailSenhaPage } from '../cadastro-email-senha/cadastro-email-senha';
 
 
 @IonicPage()
@@ -23,20 +24,27 @@ export class LoginPage {
   {
 
   }
-
+  goToCadastroEmailSenha(params){
+    if (!params) params = {};
+    this.navCtrl.push(CadastroEmailSenhaPage);
+  }
   goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
-  }goToCadastroParticipante(params){
+  }
+  goToCadastroParticipante(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroParticipantePage);
-  }goToLogin(params){
+  }
+  goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);
-  }goToHome(params){
+  }
+  goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
-  }goToCadastroOrganizador(params){
+  }
+  goToCadastroOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
   }

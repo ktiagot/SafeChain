@@ -25,7 +25,7 @@ export class CadastroEmailSenhaPage {
   user = { } as User;
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth) {
   }
-  async register(user: User){
+  async cadastrarUsuario(user: User){
     try {
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       console.log(result);
