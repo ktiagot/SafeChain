@@ -17,9 +17,9 @@ export class CadastroParticipantePage {
     private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
   }
 
-  cadastraOrganizador(){
+  cadastraParticipante(){
     this.afAuth.authState.take(1).subscribe(auth => {
-      this.afDatabase.object(`PerfilOrganizador/${auth.uid}`).set(this.participante)
+      this.afDatabase.object(`PerfilParticipante/${auth.uid}`).set(this.participante)
       .then(() => {this.navCtrl.setRoot(HomePage)});
     })
   };

@@ -6,6 +6,7 @@ import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
 import { User } from '../../models/user';
 import { CadastroEmailSenhaPage } from '../cadastro-email-senha/cadastro-email-senha';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 @IonicPage()
@@ -17,12 +18,21 @@ import { CadastroEmailSenhaPage } from '../cadastro-email-senha/cadastro-email-s
 export class LoginPage {
   user = {} as User
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController,
+    private afAuth: AngularFireAuth) {
     
   }
-  login()
+  async login(user: User)
   {
-
+    try
+    {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+      console.log(result);
+    }
+    catch(e)
+    {
+      console.log(e);
+    }
   }
   goToCadastroEmailSenha(params){
     if (!params) params = {};
