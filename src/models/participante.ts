@@ -1,4 +1,4 @@
-export interface PerfilOrganizador
+export interface PerfilParticipante
 {
     nome: string;
     cpf: string;
