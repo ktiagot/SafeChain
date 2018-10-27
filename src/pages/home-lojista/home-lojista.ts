@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProdutosPage } from '../produtos/produtos';
-import { TabsControllerLojistaPage } from '../tabs-controller-lojista/tabs-controller-lojista';
 
 /**
  * Generated class for the HomeLojistaPage page.
@@ -18,11 +17,11 @@ import { TabsControllerLojistaPage } from '../tabs-controller-lojista/tabs-contr
 export class HomeLojistaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.navCtrl.setRoot(TabsControllerLojistaPage);
+    this.navCtrl.setRoot(HomeLojistaPage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomeLojistaPage');
+    
   }
   goToProdutos(params){
     if (!params) params = {};

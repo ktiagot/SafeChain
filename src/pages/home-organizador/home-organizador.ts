@@ -3,7 +3,6 @@ import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { PerfilOrganizador } from '../../models/organizador'
-import { TabsControllerOrganizadorPage } from '../tabs-controller-organizador/tabs-controller-organizador';
 
 @Component({
   selector: 'page-home-organizador',
@@ -15,6 +14,7 @@ export class HomeOrganizadorPage {
   
   constructor(public navCtrl: NavController, private afAuth: AngularFireAuth,
     private afDb: AngularFireDatabase, private toast: ToastController) {
+      
   }
 
   ionViewDidLoad(){

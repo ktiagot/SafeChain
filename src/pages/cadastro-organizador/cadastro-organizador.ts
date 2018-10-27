@@ -8,7 +8,6 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { PerfilOrganizador } from '../../models/organizador';
-import { TabsControllerOrganizadorPage } from '../tabs-controller-organizador/tabs-controller-organizador';
 
 @Component({
   selector: 'page-cadastro-organizador',
