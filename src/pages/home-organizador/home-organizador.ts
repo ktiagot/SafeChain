@@ -3,7 +3,7 @@ import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { PerfilOrganizador } from '../../models/organizador'
-import { TabsControllerPage } from '../tabs-controller/tabs-controller';
+import { TabsControllerOrganizadorPage } from '../tabs-controller-organizador/tabs-controller-organizador';
 
 @Component({
   selector: 'page-home-organizador',
@@ -15,7 +15,6 @@ export class HomeOrganizadorPage {
   
   constructor(public navCtrl: NavController, private afAuth: AngularFireAuth,
     private afDb: AngularFireDatabase, private toast: ToastController) {
-      this.navCtrl.setRoot(TabsControllerOrganizadorPage);
   }
 
   ionViewDidLoad(){
@@ -25,7 +24,7 @@ export class HomeOrganizadorPage {
       {
         this.toast.create({
           message: `Bem vindo ao SafeChain!`,
-          duration: 3000
+          duration: 2000
         }).present();
       }
       else

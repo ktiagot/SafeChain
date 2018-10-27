@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the OperaçõesPage page.
+ * Generated class for the OpcoesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-operações',
-  templateUrl: 'operações.html',
+  selector: 'page-opcoes',
+  templateUrl: 'opcoes.html',
 })
-export class OperaçõesPage {
+export class OpcoesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OperaçõesPage');
+    console.log('ionViewDidLoad OpcoesPage');
   }
 
 }

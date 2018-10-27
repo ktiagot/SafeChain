@@ -13,8 +13,8 @@ import { ComprasPage} from '../pages/compras/compras'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
-import { TabsControllerOrganizadorPage } from '../pages/tabs-controller/tabs-controller';
-import { TabsControllerLojistaPage } from '../pages/tabs-controller/tabs-controller';
+import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organizador/tabs-controller-organizador'
+import { TabsControllerLojistaPage } from '../pages/tabs-controller-lojista/tabs-controller-lojista';
 import { OpEsTabDefaultPagePage } from '../pages/op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
@@ -43,6 +43,8 @@ import 'rxjs/add/operator/toPromise';
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
+    TabsControllerOrganizadorPage,
+    TabsControllerLojistaPage,
     OpEsTabDefaultPagePage,
     CadastroPage,
     CadastroParticipantePage,
@@ -76,6 +78,8 @@ import 'rxjs/add/operator/toPromise';
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
+    TabsControllerOrganizadorPage,
+    TabsControllerLojistaPage,
     OpEsTabDefaultPagePage,
     LoginPage,
     CadastroPage,

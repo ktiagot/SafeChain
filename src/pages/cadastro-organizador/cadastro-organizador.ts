@@ -8,6 +8,7 @@ import { CadastroParticipantePage } from '../cadastro-participante/cadastro-part
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { PerfilOrganizador } from '../../models/organizador';
+import { TabsControllerOrganizadorPage } from '../tabs-controller-organizador/tabs-controller-organizador';
 
 @Component({
   selector: 'page-cadastro-organizador',
@@ -24,7 +25,7 @@ export class CadastroOrganizadorPage {
   cadastraOrganizador(){
     this.afAuth.authState.take(1).subscribe(auth => {
       this.afDatabase.object(`PerfilOrganizador/${auth.uid}`).set(this.organizador)
-      .then(() => {this.navCtrl.setRoot(HomeOrganizadorPage)});
+      .then(() => {this.navCtrl.push(HomeOrganizadorPage);});
     })
   };
 
