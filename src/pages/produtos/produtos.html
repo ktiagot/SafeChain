@@ -35,7 +35,7 @@
         </ion-label>
         <ion-input [(ngModel)]="produto.valor" type="number" placeholder="" name="valor" ngModel></ion-input>
       </ion-item>
-    <button ion-button color="positive" block on-click="cadastraProduto()">
+    <button ion-button color="positive" block on-click="cadastraProduto(produto)">
       Cadastrar
     </button>
     <button ion-button color="calm" block on-click="goToHome()">
