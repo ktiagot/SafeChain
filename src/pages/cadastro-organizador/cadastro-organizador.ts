@@ -21,33 +21,32 @@ export class CadastroOrganizadorPage {
 
   }
 
-  cadastraOrganizador(){
-    this.afAuth.authState.take(1).subscribe(auth => {
-      this.afDatabase.object(`PerfilOrganizador/${auth.uid}`).set(this.organizador)
-      .then(() => {this.navCtrl.push(HomeOrganizadorPage);});
-    })
-  };
-
+  insert(){
+    
+  }
 
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
-  }goToLogin(params){
+  }
+  goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);
-  }goToCadastro(params){
+  }
+  goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
-  }goToCadastroParticipante(params){
+  }
+  goToCadastroParticipante(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroParticipantePage);
-  }goToCadastroOrganizador(params){
+  }
+  goToCadastroOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
-  }goToHomeOrganizador(params){
+  }
+  goToHomeOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(HomeOrganizadorPage);
   }
-
-  
 }

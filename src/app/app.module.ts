@@ -33,6 +33,7 @@ import 'rxjs/add/operator/toPromise';
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { LojistaProvider } from '../providers/lojista/lojista';
   ],
   providers: [
     StatusBar,
+    DatePipe,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,

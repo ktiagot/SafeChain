@@ -25,7 +25,7 @@ export class LoginPage {
     
   }
     
-   async login(user: User, key: string)
+   async login(user: User)
   {
     try
     {
