@@ -21,6 +21,7 @@ import { CadastroParticipantePage } from '../pages/cadastro-participante/cadastr
 import { CadastroOrganizadorPage } from '../pages/cadastro-organizador/cadastro-organizador';
 import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-do-evento';
 import { EstandePage } from '../pages/estande/estande';
+import { ProdutosPage } from '../pages/produtos/produtos';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
@@ -45,7 +46,8 @@ import 'rxjs/add/operator/toPromise';
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
     EstandePage,
-    CadastroEmailSenhaPage
+    CadastroEmailSenhaPage,
+    ProdutosPage
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import 'rxjs/add/operator/toPromise';
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
     EstandePage,
-    CadastroEmailSenhaPage
+    CadastroEmailSenhaPage,
+    ProdutosPage
   ],
   providers: [
     StatusBar,
