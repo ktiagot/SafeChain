@@ -23,13 +23,16 @@ import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-
 import { EstandePage } from '../pages/estande/estande';
 import { ProdutosPage } from '../pages/produtos/produtos';
 import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
+import { OrganizadorProvider } from '../providers/organizador/organizador';
+import { ClienteProvider } from '../providers/cliente/cliente';
+import { LojistaProvider } from '../providers/lojista/lojista';
 
 
 @NgModule({
@@ -55,6 +58,7 @@ import 'rxjs/add/operator/toPromise';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp({
@@ -64,7 +68,7 @@ import 'rxjs/add/operator/toPromise';
       projectId: "safechain-3b504",
       storageBucket: "safechain-3b504.appspot.com",
       messagingSenderId: "1084383673723"
-    }),
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -91,7 +95,10 @@ import 'rxjs/add/operator/toPromise';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
-    AngularFireDatabase
+    AngularFireDatabase,
+    OrganizadorProvider,
+    ClienteProvider,
+    LojistaProvider
   ]
 })
 export class AppModule {}
