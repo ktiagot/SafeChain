@@ -33,7 +33,7 @@ export class OrganizadorProvider {
   public getAll()
   {
     let organizadores: OrganizadorLista[] = [];
-    this.storage.forEach((
+    return this.storage.forEach((
       value: Organizador,
       key: string,
       interationNumber: Number
@@ -44,7 +44,7 @@ export class OrganizadorProvider {
       organizadores.push(organizador);
     } )
     .then(() => { return Promise.resolve(organizadores)})
-    .catch((error) => {return Promise.reject(error)});
+    .catch((error) => { return Promise.reject(error)});
   }
 }
 export class Organizador{

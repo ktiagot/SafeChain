@@ -30,10 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
+import { SQLite } from '@ionic-native/sqlite'
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
 import { DatePipe } from '@angular/common';
+import { DatabaseProvider } from '../providers/database/database';
 
 
 @NgModule({
@@ -100,7 +102,9 @@ import { DatePipe } from '@angular/common';
     AngularFireDatabase,
     OrganizadorProvider,
     ClienteProvider,
-    LojistaProvider
+    LojistaProvider,
+    SQLite,
+    DatabaseProvider
   ]
 })
 export class AppModule {}

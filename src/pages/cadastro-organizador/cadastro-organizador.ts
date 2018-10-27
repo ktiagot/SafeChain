@@ -16,15 +16,12 @@ import { PerfilOrganizador } from '../../models/organizador';
 export class CadastroOrganizadorPage {
   organizador = {} as PerfilOrganizador;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
-
-  insert(){
+  cadastraOrganizador(){
     
   }
-
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
