@@ -17,16 +17,20 @@ export class CadastroPage {
   goToCadastroParticipante(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroParticipantePage);
-  }goToLogin(params){
+  }
+  goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);
-  }goToCadastro(params){
+  }
+  goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
-  }goToHome(params){
+  }
+  goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
-  }goToCadastroOrganizador(params){
+  }
+  goToCadastroOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { EstandePage } from '../estande/estande';
+import { ProdutosPage } from '../produtos/produtos';
 @Component({
   selector: 'page-compras',
   templateUrl: 'compras.html'
@@ -15,4 +16,5 @@ export class ComprasPage {
     if (!id) id = {};
     this.navCtrl.push(EstandePage);
   }
+  
 }
