@@ -12,10 +12,10 @@ import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 export class HomeOrganizadorPage {
 
   items;
-
+  
   constructor(public navCtrl: NavController, private afAuth: AngularFireAuth,
     private afDb: AngularFireDatabase, private toast: ToastController) {
-      this.navCtrl.setRoot(TabsControllerPage);
+      this.navCtrl.setRoot(TabsControllerOrganizadorPage);
   }
 
   ionViewDidLoad(){

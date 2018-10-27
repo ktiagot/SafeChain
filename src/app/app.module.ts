@@ -13,6 +13,8 @@ import { ComprasPage} from '../pages/compras/compras'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+import { TabsControllerOrganizadorPage } from '../pages/tabs-controller/tabs-controller';
+import { TabsControllerLojistaPage } from '../pages/tabs-controller/tabs-controller';
 import { OpEsTabDefaultPagePage } from '../pages/op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
@@ -23,6 +25,7 @@ import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-
 import { EstandePage } from '../pages/estande/estande';
 import { ProdutosPage } from '../pages/produtos/produtos';
 import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
