@@ -5,6 +5,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
+import { FirebaseDatabase } from 'angularfire2';
+import firebase from 'firebase';
 
 /**
  * Generated class for the CadastroClientePage page.
@@ -28,9 +30,19 @@ export class CadastroClientePage {
     this.afAuth.authState.take(1).subscribe(auth => {
       this.afDatabase.object(`PerfilCliente/${auth.uid}`).set(this.cliente)
       .then(() => {this.navCtrl.setRoot(HomePage)});
-      const id = this.afDatabase.object(auth.uid);
-      console.log(id);
+      
+      const nome = firebase.database().ref('PerfilCliente/' + auth.uid + '/nome');
+      const cpf = firebase.database().ref('PerfilCliente/' + auth.uid + '/cpf');
+      const telefone = firebase.database().ref('PerfilCliente/' + auth.uid + '/telefone');
+      
+      console.log(auth.uid);
+      console.log(nome);
+      console.log(cpf);
+      console.log(telefone);
+      ;
     })
+
+    
   };
 
   goToLogin(params){

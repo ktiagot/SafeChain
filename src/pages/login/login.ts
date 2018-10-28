@@ -7,6 +7,7 @@ import { User } from '../../models/user';
 import { CadastroEmailSenhaPage } from '../cadastro-email-senha/cadastro-email-senha';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import firebase from 'firebase';
 
 
 @IonicPage()
@@ -17,19 +18,32 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 export class LoginPage {
   user = {} as User
-  PATH = '/PerfilOrganizador';
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController,
     private afAuth: AngularFireAuth, public afDb: AngularFireDatabase) {
     
   }
-    
+
    async login(user: User)
   {
     try
     {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)      
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)      
       this.navCtrl.push(HomePage);
+      
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          var email = user.email;
+          var uid = user.uid;
+          console.log(email);
+          console.log(uid);
+          // ...
+        } else {
+          // User is signed out.
+          // ...
+        }
+      });
     }
     catch(e)
     {
