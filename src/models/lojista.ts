@@ -1,4 +1,4 @@
-export interface PerfilCliente
+export interface PerfilLojista
 {
     nome: string;
     cpf: string;

@@ -17,7 +17,6 @@ import { OpEsTabDefaultPagePage } from '../pages/op-es-tab-default-page/op-es-ta
 import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
-import { CadastroParticipantePage } from '../pages/cadastro-participante/cadastro-participante';
 import { CadastroOrganizadorPage } from '../pages/cadastro-organizador/cadastro-organizador';
 import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-do-evento';
 import { EstandePage } from '../pages/estande/estande';
@@ -26,15 +25,12 @@ import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
 import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
-import { SQLite } from '@ionic-native/sqlite'
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
-import { DatePipe } from '@angular/common';
 import { DatabaseProvider } from '../providers/database/database';
 
 
@@ -49,7 +45,6 @@ import { DatabaseProvider } from '../providers/database/database';
     TabsControllerPage,
     OpEsTabDefaultPagePage,
     CadastroPage,
-    CadastroParticipantePage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
@@ -62,7 +57,6 @@ import { DatabaseProvider } from '../providers/database/database';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD0nyyK3dLBXr2z3N78oCjKqTwxeTWHkME",
@@ -84,7 +78,6 @@ import { DatabaseProvider } from '../providers/database/database';
     OpEsTabDefaultPagePage,
     LoginPage,
     CadastroPage,
-    CadastroParticipantePage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
@@ -95,7 +88,6 @@ import { DatabaseProvider } from '../providers/database/database';
   ],
   providers: [
     StatusBar,
-    DatePipe,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
@@ -103,7 +95,6 @@ import { DatabaseProvider } from '../providers/database/database';
     OrganizadorProvider,
     ClienteProvider,
     LojistaProvider,
-    SQLite,
     DatabaseProvider
   ]
 })

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cadastro Lojista
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page9">
+  <form>
+    <div class="spacer" style="width:300px;height:20px;" id="cadastroLojista-spacer12"></div>
+      <img src="assets/img/D3QbxaO7Sr23xyJtF9Bp_SafeChain2.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+      <div class="spacer" style="width:300px;height:20px;" id="cadastroLojista-spacer13"></div>
+        <ion-list id="cadastroLojista-list2">
+          <ion-item id="cadastroLojista-input4">
+            <ion-label>
+              Nome
+            </ion-label>
+            <ion-input [(ngModel)]="lojista.nome" type="text" placeholder="" name="nome" ngModel></ion-input>
+          </ion-item>
+          <ion-item id="cadastroLojista-input3">
+            <ion-label>
+              CPF
+            </ion-label>
+            <ion-input [(ngModel)]="lojista.cpf" type="number" name="cpf" ngModel></ion-input>
+          </ion-item>
+        <ion-item id="cadastroLojista-input6">
+          <ion-label>
+            Telefone
+          </ion-label>
+          <ion-input [(ngModel)]="lojista.telefone" type="tel" name="telefone" mask="(99)9999-99999" ngModel></ion-input>
+        </ion-item>
+      </ion-list>
+      <button id="cadastroLojista-button7" ion-button color="positive" on-click="cadastraLojista()">
+        Cadastrar
+      </button>
+      <button id="cadastroLojista-button8" ion-button color="calm" block on-click="goToLogin()">
+        Voltar
+      </button>
+    </form>
+</ion-content>
