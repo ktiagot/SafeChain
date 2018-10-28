@@ -30,16 +30,6 @@ export class CadastroClientePage {
     this.afAuth.authState.take(1).subscribe(auth => {
       this.afDatabase.object(`PerfilCliente/${auth.uid}`).set(this.cliente)
       .then(() => {this.navCtrl.setRoot(HomePage)});
-      
-      const nome = firebase.database().ref('PerfilCliente/' + auth.uid + '/nome');
-      const cpf = firebase.database().ref('PerfilCliente/' + auth.uid + '/cpf');
-      const telefone = firebase.database().ref('PerfilCliente/' + auth.uid + '/telefone');
-      
-      console.log(auth.uid);
-      console.log(nome);
-      console.log(cpf);
-      console.log(telefone);
-      ;
     })
 
     

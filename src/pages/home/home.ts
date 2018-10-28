@@ -20,12 +20,14 @@ import { PerfilCliente } from '../../models/participante';
   selector: 'page-home',
   templateUrl: 'home.html',
 })
+
 export class HomePage {
+   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private afDb: AngularFireDatabase, private provider: ClienteProvider, private afAuth: AngularFireAuth) {
     this.navCtrl.setRoot(TabsControllerPage)
     
-  }      
-  
+  }
+ 
 
 }
