@@ -18,10 +18,13 @@ import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroOrganizadorPage } from '../pages/cadastro-organizador/cadastro-organizador';
+import { CadastroLojistaPage } from '../pages/cadastro-lojista/cadastro-lojista';
+import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
 import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-do-evento';
 import { EstandePage } from '../pages/estande/estande';
 import { ProdutosPage } from '../pages/produtos/produtos';
 import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
+
 import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,7 +34,6 @@ import 'rxjs/add/operator/toPromise';
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
-import { DatabaseProvider } from '../providers/database/database';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { DatabaseProvider } from '../providers/database/database';
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
-    HomeLojistaPage
+    HomeLojistaPage,
+    CadastroLojistaPage,
+    CadastroClientePage
   ],
   imports: [
     BrowserModule,
@@ -84,7 +88,9 @@ import { DatabaseProvider } from '../providers/database/database';
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
-    HomeLojistaPage
+    HomeLojistaPage,
+    CadastroLojistaPage,
+    CadastroClientePage
   ],
   providers: [
     StatusBar,
@@ -94,8 +100,7 @@ import { DatabaseProvider } from '../providers/database/database';
     AngularFireDatabase,
     OrganizadorProvider,
     ClienteProvider,
-    LojistaProvider,
-    DatabaseProvider
+    LojistaProvider
   ]
 })
 export class AppModule {}

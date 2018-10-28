@@ -4,7 +4,6 @@ import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { CadastroPage } from '../cadastro/cadastro';
 import { HomeOrganizadorPage } from '../home-organizador/home-organizador';
-import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { PerfilOrganizador } from '../../models/organizador';
@@ -33,10 +32,6 @@ export class CadastroOrganizadorPage {
   goToCadastro(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroPage);
-  }
-  goToCadastroParticipante(params){
-    if (!params) params = {};
-    this.navCtrl.push(CadastroParticipantePage);
   }
   goToCadastroOrganizador(params){
     if (!params) params = {};

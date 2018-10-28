@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
+import { PerfilLojista } from '../../models/lojista';
 
 /**
  * Generated class for the CadastroLojistaPage page.
@@ -14,12 +19,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cadastro-lojista.html',
 })
 export class CadastroLojistaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cliente = {} as PerfilLojista;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroLojistaPage');
-  }
+  cadastraCliente(){
+    this.afAuth.authState.take(1).subscribe(auth => {
+      this.afDatabase.object(`PerfilCliente/${auth.uid}`).set(this.cliente)
+      .then(() => {this.navCtrl.setRoot(HomePage)});
+    })
+  };
 
+  goToLogin(params){
+    if (!params) params = {};
+    this.navCtrl.push(LoginPage);
+  }
 }

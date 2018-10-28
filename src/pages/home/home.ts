@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsControllerPage } from '../tabs-controller/tabs-controller';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import { ClienteProvider } from '../../providers/cliente/cliente';
 
 /**
  * Generated class for the HomePage page.
@@ -15,13 +18,13 @@ import { TabsControllerPage } from '../tabs-controller/tabs-controller';
   templateUrl: 'home.html',
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  clientes: Observable<any>;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private db: AngularFireDatabase, private provider: ClienteProvider) {
     this.navCtrl.setRoot(TabsControllerPage)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
   }
 
 }

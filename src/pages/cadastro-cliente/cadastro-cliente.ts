@@ -28,6 +28,8 @@ export class CadastroClientePage {
     this.afAuth.authState.take(1).subscribe(auth => {
       this.afDatabase.object(`PerfilCliente/${auth.uid}`).set(this.cliente)
       .then(() => {this.navCtrl.setRoot(HomePage)});
+      const id = this.afDatabase.object(auth.uid);
+      console.log(id);
     })
   };
 

@@ -14,5 +14,12 @@
 
 
 <ion-content padding>
-
+<button (click)="abrir()"> AQUI </button>
+<ion-list>
+  <ion-item-sliding *ngFor="let clientes of clientes | async">
+    <ion-item>
+      <h1>{{ cliente.nome }}</h1> 
+</ion-item>
+</ion-item-sliding>
+</ion-list>
 </ion-content>

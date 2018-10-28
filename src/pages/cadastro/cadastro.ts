@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { CadastroParticipantePage } from '../cadastro-participante/cadastro-participante';
 import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 import { CadastroOrganizadorPage } from '../cadastro-organizador/cadastro-organizador';
+import { CadastroClientePage } from '../cadastro-cliente/cadastro-cliente';
+import { CadastroLojistaPage } from '../cadastro-lojista/cadastro-lojista';
 
 @Component({
   selector: 'page-cadastro',
@@ -13,10 +14,6 @@ export class CadastroPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   constructor(public navCtrl: NavController) {
-  }
-  goToCadastroParticipante(params){
-    if (!params) params = {};
-    this.navCtrl.push(CadastroParticipantePage);
   }
   goToLogin(params){
     if (!params) params = {};
@@ -33,5 +30,13 @@ export class CadastroPage {
   goToCadastroOrganizador(params){
     if (!params) params = {};
     this.navCtrl.push(CadastroOrganizadorPage);
+  }
+  goToCadastroCliente(params){
+    if (!params) params = {};
+    this.navCtrl.push(CadastroClientePage);
+  }
+  goToCadastroLojista(params){
+    if (!params) params = {};
+    this.navCtrl.push(CadastroLojistaPage);
   }
 }
