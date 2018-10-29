@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsControllerPage } from '../tabs-controller/tabs-controller';
-import { AngularFireDatabase, AngularFireAction } from 'angularfire2/database';
-import { Observable } from 'rxjs';
-import { ClienteProvider } from '../../providers/cliente/cliente';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import firebase from 'firebase';
-import { PerfilCliente } from '../../models/participante';
 
 /**
  * Generated class for the HomePage page.
@@ -20,14 +14,30 @@ import { PerfilCliente } from '../../models/participante';
   selector: 'page-home',
   templateUrl: 'home.html',
 })
-
 export class HomePage {
-   
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private afDb: AngularFireDatabase, private provider: ClienteProvider, private afAuth: AngularFireAuth) {
-    this.navCtrl.setRoot(TabsControllerPage)
-    
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController,
+    private afAuth: AngularFireAuth) {
   }
- 
+
+  ionViewDidLoad(){
+    //Validação do cadastro com mensagem de boas vindas
+    this.afAuth.authState.take(1).subscribe(data => {
+      if (data && data.email && data.uid)
+      {
+        this.toast.create({
+          message: `Bem vindo ao SafeChain!`,
+          duration: 2000
+        }).present();
+      }
+      else
+      {
+        this.toast.create({
+          message: 'Não foi possível realizar o cadastro, tente novamente mais tarde!',
+          duration: 3000
+        }).present();
+      }
+    }) 
+  }
 
 }
