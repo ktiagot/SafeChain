@@ -8,6 +8,7 @@ import { CadastroEmailSenhaPage } from '../cadastro-email-senha/cadastro-email-s
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import firebase from 'firebase';
+import { HomeLojistaPage } from '../home-lojista/home-lojista';
 
 
 @IonicPage()
@@ -67,6 +68,10 @@ export class LoginPage {
   goToHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
+  }
+  goToHomeLojista(params){
+    if (!params) params = {};
+    this.navCtrl.push(HomeLojistaPage);
   }
   goToCadastroOrganizador(params){
     if (!params) params = {};

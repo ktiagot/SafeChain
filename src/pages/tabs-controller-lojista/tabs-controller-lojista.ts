@@ -15,7 +15,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class TabsControllerLojistaPage {
 
-  homeRoot = 'HomePage'
+  homeLojistaRoot = 'HomeLojistaPage'
   operacoesRoot = 'OperacoesPage'
   produtosRoot = 'ProdutosPage'
   opcoesRoot = 'OpcoesPage'

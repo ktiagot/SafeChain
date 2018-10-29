@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 
 /**
  * Generated class for the HomePage page.
@@ -18,24 +19,19 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController,
     private afAuth: AngularFireAuth) {
+      this.navCtrl.setRoot(TabsControllerPage);
   }
 
-  ionViewDidLoad(){
+  ionViewWillEnter(){
     //Validação do cadastro com mensagem de boas vindas
     this.afAuth.authState.take(1).subscribe(data => {
       if (data && data.email && data.uid)
       {
-        this.toast.create({
-          message: `Bem vindo ao SafeChain!`,
-          duration: 2000
-        }).present();
+        
       }
       else
       {
-        this.toast.create({
-          message: 'Não foi possível realizar o cadastro, tente novamente mais tarde!',
-          duration: 3000
-        }).present();
+        
       }
     }) 
   }

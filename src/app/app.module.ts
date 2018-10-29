@@ -34,6 +34,8 @@ import 'rxjs/add/operator/toPromise';
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
+import { TabsControllerLojistaPage } from '../pages/tabs-controller-lojista/tabs-controller-lojista';
+import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organizador/tabs-controller-organizador';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { LojistaProvider } from '../providers/lojista/lojista';
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
+    TabsControllerLojistaPage,
+    TabsControllerOrganizadorPage,
     OpEsTabDefaultPagePage,
     CadastroPage,
     CadastroOrganizadorPage,
@@ -79,6 +83,8 @@ import { LojistaProvider } from '../providers/lojista/lojista';
     PrXimosEventosPage,
     EventosPage,
     TabsControllerPage,
+    TabsControllerLojistaPage,
+    TabsControllerOrganizadorPage,
     OpEsTabDefaultPagePage,
     LoginPage,
     CadastroPage,
