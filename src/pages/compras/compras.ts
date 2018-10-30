@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { EstandePage } from '../estande/estande';
 import { ProdutosPage } from '../produtos/produtos';
+import { HomePage } from '../home/home';
+import { OpcoesPage } from '../opcoes/opcoes';
+import { EventosPage } from '../eventos/eventos';
 @Component({
   selector: 'page-compras',
   templateUrl: 'compras.html'
@@ -9,9 +12,27 @@ import { ProdutosPage } from '../produtos/produtos';
 export class ComprasPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private menuCtrl: MenuController) {
   }
-
+  openMenu() {
+    this.menuCtrl.open();
+  }
+  closeMenu()
+  {
+    this.menuCtrl.close();
+  }
+  goToHome(params){
+    if (!params) params = {};
+    this.navCtrl.push(HomePage);
+  }
+  goToOpcoes(params){
+    if (!params) params = {};
+    this.navCtrl.push(OpcoesPage);
+  }
+  goToEventos(params){
+    if (!params) params = {};
+    this.navCtrl.push(EventosPage);
+  }
   goToEstande(id){
     if (!id) id = {};
     this.navCtrl.push(EstandePage);
