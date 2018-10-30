@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import firebase from 'firebase';
 import { HomeLojistaPage } from '../home-lojista/home-lojista';
+import { HomeOrganizadorPage } from '../home-organizador/home-organizador';
 
 
 @IonicPage()
@@ -72,6 +73,10 @@ export class LoginPage {
   goToHomeLojista(params){
     if (!params) params = {};
     this.navCtrl.push(HomeLojistaPage);
+  }
+  goToHomeOrganizador(params){
+    if (!params) params = {};
+    this.navCtrl.push(HomeOrganizadorPage);
   }
   goToCadastroOrganizador(params){
     if (!params) params = {};

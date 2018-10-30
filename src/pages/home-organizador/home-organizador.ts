@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, MenuController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
-import { PerfilOrganizador } from '../../models/organizador'
-import { TabsControllerOrganizadorPage } from '../tabs-controller-organizador/tabs-controller-organizador';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { ProdutosPage } from '../produtos/produtos';
+import { OperacoesPage } from '../operacoes/operacoes';
+import { EventosPage } from '../eventos/eventos';
+import { OpcoesPage } from '../opcoes/opcoes';
+
 
 @Component({
   selector: 'page-home-organizador',
@@ -14,9 +17,16 @@ export class HomeOrganizadorPage {
   items;
   
   constructor(public navCtrl: NavController, private afAuth: AngularFireAuth,
-    private afDb: AngularFireDatabase, private toast: ToastController) {
-      this.navCtrl.setRoot(TabsControllerOrganizadorPage);
+    private afDb: AngularFireDatabase, private toast: ToastController, private menuCtrl: MenuController) {
       
+      
+  }
+  openMenu() {
+    this.menuCtrl.open();
+  }
+  closeMenu()
+  {
+    this.menuCtrl.close();
   }
 
   ionViewDidLoad(){
@@ -24,10 +34,7 @@ export class HomeOrganizadorPage {
     this.afAuth.authState.take(1).subscribe(data => {
       if (data && data.email && data.uid)
       {
-        this.toast.create({
-          message: `Bem vindo ao SafeChain!`,
-          duration: 2000
-        }).present();
+        
       }
       else
       {
@@ -37,6 +44,22 @@ export class HomeOrganizadorPage {
         }).present();
       }
     }) 
+  }
+  goToProdutos(params){
+    if (!params) params = {};
+    this.navCtrl.push(ProdutosPage);
+  }
+  goToOperacoes(params){
+    if (!params) params = {};
+    this.navCtrl.push(OperacoesPage);
+  }
+  goToEventos(params){
+    if (!params) params = {};
+    this.navCtrl.push(EventosPage);
+  }
+  goToOpcoes(params){
+    if (!params) params = {};
+    this.navCtrl.push(OpcoesPage);
   }
 
   

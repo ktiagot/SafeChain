@@ -33,7 +33,9 @@ import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
 import { TabsControllerLojistaPage } from '../pages/tabs-controller-lojista/tabs-controller-lojista';
 import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organizador/tabs-controller-organizador';
-import { HomeLojistaPageModule } from '../pages/home-lojista/home-lojista.module';
+import { OpcoesPage } from '../pages/opcoes/opcoes';
+import { OperacoesPage } from '../pages/operacoes/operacoes';
+import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
 
 
 @NgModule({
@@ -51,11 +53,14 @@ import { HomeLojistaPageModule } from '../pages/home-lojista/home-lojista.module
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
+    HomeLojistaPage,
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
     CadastroLojistaPage,
-    CadastroClientePage
+    CadastroClientePage,
+    OpcoesPage,
+    OperacoesPage
   ],
   imports: [
     BrowserModule,
@@ -75,8 +80,8 @@ import { HomeLojistaPageModule } from '../pages/home-lojista/home-lojista.module
           menuType: 'overlay',
         }
       }
-    }),
-    HomeLojistaPageModule
+    })
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -93,11 +98,14 @@ import { HomeLojistaPageModule } from '../pages/home-lojista/home-lojista.module
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
     HomeOrganizadorPage,
+    HomeLojistaPage,
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
     CadastroLojistaPage,
-    CadastroClientePage
+    CadastroClientePage,
+    OpcoesPage,
+    OperacoesPage
   ],
   providers: [
     StatusBar,
