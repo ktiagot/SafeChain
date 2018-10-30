@@ -63,7 +63,7 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    // IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     FormsModule,
     AngularFireModule.initializeApp({
@@ -73,6 +73,14 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
       projectId: "safechain-3b504",
       storageBucket: "safechain-3b504.appspot.com",
       messagingSenderId: "1084383673723"
+    }),
+    IonicModule.forRoot(MyApp,{
+      menuType: 'push',
+      platforms: {
+        ios: {
+          menuType: 'overlay',
+        }
+      }
     })
   ],
   bootstrap: [IonicApp],
