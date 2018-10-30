@@ -13,7 +13,6 @@ import { ComprasPage} from '../pages/compras/compras'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
-import { OpEsTabDefaultPagePage } from '../pages/op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
@@ -49,7 +48,6 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
     TabsControllerPage,
     TabsControllerLojistaPage,
     TabsControllerOrganizadorPage,
-    OpEsTabDefaultPagePage,
     CadastroPage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
@@ -93,7 +91,6 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
     TabsControllerPage,
     TabsControllerLojistaPage,
     TabsControllerOrganizadorPage,
-    OpEsTabDefaultPagePage,
     LoginPage,
     CadastroPage,
     CadastroOrganizadorPage,

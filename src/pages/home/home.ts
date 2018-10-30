@@ -27,6 +27,10 @@ export class HomePage {
   openMenu() {
     this.menuCtrl.open();
   }
+  closeMenu()
+  {
+    this.menuCtrl.close();
+  }
   ionViewWillEnter(){
     //Validação do cadastro com mensagem de boas vindas
     this.afAuth.authState.take(1).subscribe(data => {
@@ -44,13 +48,12 @@ export class HomePage {
     if (!params) params = {};
     this.navCtrl.push(ComprasPage);
   }
-  goToEventos(params){
-    if (!params) params = {};
-    this.navCtrl.push(EventosPage);
-  }
   goToOpcoes(params){
     if (!params) params = {};
     this.navCtrl.push(OpcoesPage);
   }
-
+  goToEventos(params){
+    if (!params) params = {};
+    this.navCtrl.push(EventosPage);
+  }
 }

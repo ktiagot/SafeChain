@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ComprasPage } from '../compras/compras';
 import { PrXimosEventosPage } from '../pr-ximos-eventos/pr-ximos-eventos';
-import { OpEsTabDefaultPagePage } from '../op-es-tab-default-page/op-es-tab-default-page';
 import { LoginPage } from '../login/login';
  @Component({
   selector: 'page-tabs-controller',
@@ -15,7 +14,6 @@ export class TabsControllerPage {
   tab1Root: any = HomePage;
   tab2Root: any = ComprasPage;
   tab3Root: any = PrXimosEventosPage;
-  tab4Root: any = OpEsTabDefaultPagePage;
   tab5Root: any = LoginPage;
   constructor(public navCtrl: NavController) {
   }
