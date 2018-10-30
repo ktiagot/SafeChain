@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -22,9 +22,7 @@ import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente'
 import { InformaEsDoEventoPage } from '../pages/informa-es-do-evento/informa-es-do-evento';
 import { EstandePage } from '../pages/estande/estande';
 import { ProdutosPage } from '../pages/produtos/produtos';
-import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
 
-import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +33,7 @@ import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
 import { TabsControllerLojistaPage } from '../pages/tabs-controller-lojista/tabs-controller-lojista';
 import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organizador/tabs-controller-organizador';
+import { HomeLojistaPageModule } from '../pages/home-lojista/home-lojista.module';
 
 
 @NgModule({
@@ -55,14 +54,11 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
-    HomeLojistaPage,
     CadastroLojistaPage,
     CadastroClientePage
   ],
   imports: [
     BrowserModule,
-    // IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
     FormsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD0nyyK3dLBXr2z3N78oCjKqTwxeTWHkME",
@@ -79,7 +75,8 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
           menuType: 'overlay',
         }
       }
-    })
+    }),
+    HomeLojistaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -99,7 +96,6 @@ import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organiza
     EstandePage,
     CadastroEmailSenhaPage,
     ProdutosPage,
-    HomeLojistaPage,
     CadastroLojistaPage,
     CadastroClientePage
   ],

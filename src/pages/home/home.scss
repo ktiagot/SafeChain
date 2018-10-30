@@ -3,9 +3,9 @@ page-home {
         color: #488aff;
         background-color: white;
     }
-    .button-md:active {
-        color: white;
-        background-color: #488aff;
+    .button-md::after {
+        color: #488aff;
+        background-color: white;
     }
 }
 

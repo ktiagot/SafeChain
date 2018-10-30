@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, MenuController } from 'ionic-angular';
 import { ProdutosPage } from '../produtos/produtos';
-import { TabsControllerLojistaPage } from '../tabs-controller-lojista/tabs-controller-lojista';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { OpcoesPage } from '../opcoes/opcoes';
+import { EventosPage } from '../eventos/eventos';
+import { OperacoesPage } from '../operacoes/operacoes';
 
 /**
  * Generated class for the HomeLojistaPage page.
@@ -19,19 +21,22 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class HomeLojistaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private afAuth: AngularFireAuth, private toast: ToastController) {
-    this.navCtrl.setRoot(TabsControllerLojistaPage);
+    private afAuth: AngularFireAuth, private toast: ToastController, private menuCtrl: MenuController) {
+    
   }
-
+  openMenu() {
+    this.menuCtrl.open();
+  }
+  closeMenu()
+  {
+    this.menuCtrl.close();
+  }
   ionViewDidLoad(){
     //Validação do cadastro com mensagem de boas vindas
     this.afAuth.authState.take(1).subscribe(data => {
       if (data && data.email && data.uid)
       {
-        this.toast.create({
-          message: `Bem vindo ao SafeChain!`,
-          duration: 2000
-        }).present();
+       
       }
       else
       {
@@ -46,4 +51,17 @@ export class HomeLojistaPage {
     if (!params) params = {};
     this.navCtrl.push(ProdutosPage);
   }
+  goToOperacoes(params){
+    if (!params) params = {};
+    this.navCtrl.push(OperacoesPage);
+  }
+  goToEventos(params){
+    if (!params) params = {};
+    this.navCtrl.push(EventosPage);
+  }
+  goToOpcoes(params){
+    if (!params) params = {};
+    this.navCtrl.push(OpcoesPage);
+  }
+
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, MenuController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 import { ComprasPage } from '../compras/compras';
 import { EventosPage } from '../eventos/eventos';
 import { OpcoesPage } from '../opcoes/opcoes';
