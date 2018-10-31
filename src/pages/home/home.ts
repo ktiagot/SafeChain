@@ -21,7 +21,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController,
     private afAuth: AngularFireAuth, private menuCtrl: MenuController) {
-    //this.navCtrl.setRoot(TabsControllerPage);
+    
   }
   openMenu() {
     this.menuCtrl.open();

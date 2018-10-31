@@ -12,7 +12,6 @@ import { HomeOrganizadorPage } from '../pages/home-organizador/home-organizador'
 import { ComprasPage} from '../pages/compras/compras'
 import { PrXimosEventosPage } from '../pages/pr-ximos-eventos/pr-ximos-eventos';
 import { EventosPage } from '../pages/eventos/eventos';
-import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { LoginPage } from '../pages/login/login';
 import { CadastroEmailSenhaPage } from '../pages/cadastro-email-senha/cadastro-email-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
@@ -31,11 +30,10 @@ import 'rxjs/add/operator/toPromise';
 import { OrganizadorProvider } from '../providers/organizador/organizador';
 import { ClienteProvider } from '../providers/cliente/cliente';
 import { LojistaProvider } from '../providers/lojista/lojista';
-import { TabsControllerLojistaPage } from '../pages/tabs-controller-lojista/tabs-controller-lojista';
-import { TabsControllerOrganizadorPage } from '../pages/tabs-controller-organizador/tabs-controller-organizador';
 import { OpcoesPage } from '../pages/opcoes/opcoes';
 import { OperacoesPage } from '../pages/operacoes/operacoes';
 import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
+import { EditarClientePage } from '../pages/editar-cliente/editar-cliente';
 
 
 @NgModule({
@@ -46,9 +44,6 @@ import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
     ComprasPage,
     PrXimosEventosPage,
     EventosPage,
-    TabsControllerPage,
-    TabsControllerLojistaPage,
-    TabsControllerOrganizadorPage,
     CadastroPage,
     CadastroOrganizadorPage,
     InformaEsDoEventoPage,
@@ -60,7 +55,8 @@ import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
     CadastroLojistaPage,
     CadastroClientePage,
     OpcoesPage,
-    OperacoesPage
+    OperacoesPage,
+    EditarClientePage
   ],
   imports: [
     BrowserModule,
@@ -90,9 +86,6 @@ import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
     ComprasPage,
     PrXimosEventosPage,
     EventosPage,
-    TabsControllerPage,
-    TabsControllerLojistaPage,
-    TabsControllerOrganizadorPage,
     LoginPage,
     CadastroPage,
     CadastroOrganizadorPage,
@@ -105,7 +98,8 @@ import { HomeLojistaPage } from '../pages/home-lojista/home-lojista';
     CadastroLojistaPage,
     CadastroClientePage,
     OpcoesPage,
-    OperacoesPage
+    OperacoesPage,
+    EditarClientePage
   ],
   providers: [
     StatusBar,

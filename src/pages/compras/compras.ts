@@ -10,8 +10,6 @@ import { EventosPage } from '../eventos/eventos';
   templateUrl: 'compras.html'
 })
 export class ComprasPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
   constructor(public navCtrl: NavController, private menuCtrl: MenuController) {
   }
   openMenu() {

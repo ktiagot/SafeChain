@@ -6,8 +6,6 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'pr-ximos-eventos.html'
 })
 export class PrXimosEventosPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
   constructor(public navCtrl: NavController) {
   }
 }

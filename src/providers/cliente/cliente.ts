@@ -10,35 +10,43 @@ import { AngularFireDatabase } from 'angularfire2/database';
 */
 @Injectable()
 export class ClienteProvider {
-  private PATH = 'Clientes/'
-  constructor(private afdb: AngularFireDatabase) {
+  private PATH = 'PerfilCliente/'
+  constructor(private afDb: AngularFireDatabase) {
     
   }
+  
   getAll() {
-    return this.afdb.list(this.PATH, ref => ref.orderByChild('nome'))
+    return this.afDb.list(this.PATH, ref => ref.orderByChild('nome'))
       .snapshotChanges()
       .map(changes => {
         return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       })
   }
+
   get(key: string) {
-    return this.afdb.object(this.PATH + key).snapshotChanges()
-      .map(cliente => {
-        return { key: cliente.key, ...cliente.payload.val() };
+    return this.afDb.object(this.PATH + key).snapshotChanges()
+      .map(c => {
+        return { key: c.key, ...c.payload.val() };
       });
   }
  
   save(cliente: any) {
     return new Promise((resolve, reject) => {
-      
-        this.afdb.list(this.PATH)
+      if (cliente.key) {
+        this.afDb.list(this.PATH)
+          .update(cliente.key, { nome: cliente.nome, cpf: cliente.cpf, telefone: cliente.telefone })
+          .then(() => resolve())
+          .catch((e) => reject(e));
+      } else {
+        this.afDb.list(this.PATH)
           .push({ nome: cliente.nome, cpf: cliente.cpf, telefone: cliente.telefone })
           .then(() => resolve());
+      }
     })
   }
  
   remove(key: string) {
-    return this.afdb.list(this.PATH).remove(key);
+    return this.afDb.list(this.PATH).remove(key);
   }
 
 }

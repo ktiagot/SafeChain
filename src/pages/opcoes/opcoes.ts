@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the OpcoesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +8,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'opcoes.html',
 })
 export class OpcoesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  constructor(public navCtrl: NavController) {
+     
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OpcoesPage');
+  
+  editCliente(cliente: any)
+  {
+    this.navCtrl.push('EditarClientePage', { cliente: cliente })
   }
+  
 
+
+  
 }
