@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { ClienteProvider } from '../../providers/cliente/cliente';
+import { Observable } from 'rxjs';
+import { EditarClientePage } from '../editar-cliente/editar-cliente';
 
 
 @IonicPage()
@@ -8,14 +11,14 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
   templateUrl: 'opcoes.html',
 })
 export class OpcoesPage {
-  
-  constructor(public navCtrl: NavController) {
-     
+  clientes: Observable<any>;
+  constructor(public navCtrl: NavController, private provider: ClienteProvider) {
+     this.clientes = this.provider.getAll();
   }
   
   editCliente(cliente: any)
   {
-    this.navCtrl.push('EditarClientePage', { cliente: cliente })
+    this.navCtrl.push(EditarClientePage, { cliente: cliente })
   }
   
 
