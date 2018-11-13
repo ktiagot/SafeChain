@@ -1,9 +1,3 @@
-<!--
-  Generated template for the EventosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +8,38 @@
 
 
 <ion-content padding>
-
+  <form>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              Nome do Evento
+            </ion-label>
+            <ion-input type="text" placeholder="" name="nome" ngModel></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              Endereço
+            </ion-label>
+            <ion-input type="text" name="endereco" ngModel></ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label>
+            Descrição
+          </ion-label>
+          <ion-input type="text" name="descricao" ngModel></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Data
+          </ion-label>
+          <ion-input type="date" name="data" ngModel></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button color="positive" on-click="cadastraEvento()">
+        Cadastrar
+      </button>
+      <button ion-button color="calm" block on-click="goToHomeOrganizador()">
+        Voltar
+      </button>
+    </form>
 </ion-content>
